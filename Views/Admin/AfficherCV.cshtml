@@ -1,0 +1,36 @@
+﻿@model testi.DBContext.Candidat
+
+@{
+ }
+
+<div class="container">
+    <div class="text-bg-primary p-3">
+        <h2 class="mt-4">Candidature de @Model.Nom @Model.Prenom</h2>
+
+    </div>
+     
+    <div class="card mt-4">
+        <div class="card-body">
+            <h5 class="card-title">Informations du candidat</h5>
+            <p class="card-text"><strong>Nom:</strong> @Model.Nom</p>
+            <p class="card-text"><strong>Prénom:</strong> @Model.Prenom</p>
+            <p class="card-text"><strong>Email:</strong> @Model.Email</p>
+            <p class="card-text"><strong>Téléphone:</strong> @Model.Telephone</p>
+            <p class="card-text"><strong>Niveau d'étude:</strong> @Model.NiveauEtude</p>
+            <p class="card-text"><strong>Nombre d'années d'expérience:</strong> @Model.AnneesExperience</p>
+            <p class="card-text"><strong>Dernier employeur:</strong> @Model.DernierEmployeur</p>
+
+            
+        </div>
+    </div>
+
+    @if (!string.IsNullOrEmpty(Model.CvPath))
+    {
+        <h5 class="mt-4">CV du candidat</h5>
+        <div class="embed-responsive embed-responsive-4by3">
+            <iframe  width="500PX" height="700PX"  src="@Url.Content(Model.CvPath)"></iframe>
+        </div>
+    }
+
+    <a class="btn btn-primary mt-3" href="@Url.Action("Index", "Admin")">Retour à la liste</a>
+</div>

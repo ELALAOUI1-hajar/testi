@@ -1,0 +1,53 @@
+﻿@model testi.Models.AddCandidatViewModel
+
+<div>
+    <h2>Postuler à une offre</h2>
+    <br><br>
+    <form method="post" action="Add" class="mt-5" enctype="multipart/form-data">
+         <div class="form-group">
+            <label for="Nom">Nom:</label>
+            <input type="text" name="Nom" class="form-control" asp-for="Nom" required>
+        </div>
+
+        <div class="form-group">
+            <label for="Prenom">Prénom:</label>
+            <input type="text" name="Prenom" class="form-control" asp-for="Prenom" required>
+        </div>
+
+        <div class="form-group">
+            <label for="Email">E-mail:</label>
+            <input type="email" name="Email" class="form-control" asp-for="Email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="Telephone">Téléphone:</label>
+            <input type="tel" name="Telephone" class="form-control" asp-for="Telephone" required>
+        </div>
+
+        <div class="form-group">
+            <label for="NiveauEtude">Niveau d'étude:</label>
+            <input type="text" name="NiveauEtude" class="form-control" asp-for="NiveauEtude" required>
+        </div>
+
+        <div class="form-group">
+            <label for="AnneesExperience">Nombre d'années d'expérience:</label>
+            <input type="number" name="AnneesExperience" class="form-control" asp-for="AnneesExperience" required>
+        </div>
+
+        <div class="form-group">
+            <label for="DernierEmployeur">Dernier employeur:</label>
+            <input type="text" name="DernierEmployeur" class="form-control" asp-for="DernierEmployeur" required>
+        </div>
+
+        <hr>
+
+         <div class="form-group">
+            <label for="Cv">Uploader votre CV (PDF ou IMG):</label>
+            <input type="file" name="Cv" class="form-control-file" asp-for="Cv" required>
+        </div>
+
+        <hr>
+
+         <button type="submit" class="btn btn-primary">Postuler</button>
+    </form>
+</div>
